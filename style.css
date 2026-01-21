@@ -5,9 +5,19 @@
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    gap: 0;  
+}
+
 header {
-    background: #4caf50;
+    grid-area: header;
+    background: rgb(75, 170, 75);
     color: white;
     text-align: center;
     padding: 30px 10px;
@@ -17,9 +27,9 @@ header p {
     margin-top: 10px;
 }
 
-/* NAV */
 nav {
-    background: #66bb6a;
+    grid-area: nav;
+    background: rgb(91, 192, 91);
 }
 
 nav ul {
@@ -37,45 +47,55 @@ nav a {
     font-weight: bold;
 }
 
-/* MAIN GRID */
 main {
+    grid-area: main;
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 20px;
-    padding: 20px;
+    padding: 0 20px;
+    margin-top: 0; 
 }
 
-/* ASIDE */
 aside {
     background: #e8f5e9;
     padding: 20px;
     border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #123;
 }
 
 aside h3,
-aside h4 {
-    margin-bottom: 10px;
+aside h4,
+aside p,
+aside ul,
+aside li,
+aside strong {
+    font-family: Arial, sans-serif;
+    color: #123;
+    margin-bottom: 8px;
 }
 
 aside ul {
-    margin-bottom: 20px;
     padding-left: 18px;
 }
 
-aside li {
-    margin-bottom: 8px;
+.why-list {
+    font-size: 13px;
+    padding-left: 18px;
 }
-.why-list { font-size: 13px; color: #123; margin: 8px 0 0; padding-left: 18px; }
-.why-list ul { margin: 6px 0 0 16px; padding-left: 14px; }
 
-/* GALLERY GRID */
+.why-list ul {
+    margin: 6px 0 0 16px;
+    padding-left: 14px;
+}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 20px;;
+    gap: 20px;
 }
 
-/* CARD */
 .card {
     background: white;
     border-radius: 12px;
@@ -96,11 +116,11 @@ aside li {
     margin-top: 10px;
 }
 
-/* FOOTER */
 footer {
-    background: #4caf50;
+    grid-area: footer;
+    background: rgb(75, 170, 75);
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 20px; 
 }
